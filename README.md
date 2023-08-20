@@ -26,8 +26,6 @@ If you don't have Termux installed, you can get it from the Google Play Store or
 
 Open Termux and run the following command:
 
-bash
-Copy code
 pkg update
 pkg upgrade
 pkg install git
@@ -36,7 +34,7 @@ cd BruteforcePassGen
 python skgen.py
 For Linux:
 
-Run the following commands:
+Run the following commands For Linux:
 
 sudo apt update
 sudo apt upgrade
