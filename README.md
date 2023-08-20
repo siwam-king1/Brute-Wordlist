@@ -23,10 +23,10 @@ Here's a step-by-step guide to cloning the repository and running the `skgen.py`
 
 **Termux (Android):**
 
-1. **Install Termux:**
+ **Install Termux:**
    If you don't have Termux installed, you can get it from the Google Play Store or F-Droid.
 
-2. **Open Termux and run the following command:**
+ **Open Termux and run the following command:**
    ```bash
    pkg update
    pkg upgrade
@@ -38,10 +38,10 @@ Here's a step-by-step guide to cloning the repository and running the `skgen.py`
 
    **Linux (Computer):**
 
-1. **Install Linux:**
+ **Install Linux:**
    If you don't have Linux installed, you can get it from the www.linux.org.
 
-2. **Open Linux and run the following command:**
+ **Open Linux and run the following command:**
  ```bash  
  sudo apt update
 sudo apt upgrade
