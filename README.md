@@ -32,7 +32,7 @@ Here's a step-by-step guide to cloning the repository and running the `skgen.py`
    pkg upgrade
    pkg install git
    git clone https://github.com/siwam-king1/Brute-Wordlist.git
-   cd BruteforcePassGen
+   cd Brute-Wordlist
    python skgen.py
    ```
 
@@ -47,7 +47,7 @@ Here's a step-by-step guide to cloning the repository and running the `skgen.py`
 sudo apt upgrade
 sudo apt install git
 git clone https://github.com/siwam-king1/Brute-Wordlist.git
-cd BruteforcePassGen
+cd Brute-Wordlist
 python3 skgen.py
 ```
 ## **Contributions:**
