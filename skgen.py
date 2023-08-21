@@ -61,9 +61,9 @@ if __name__ == "__main__":
     
     num_passwords = int(input("Enter the quantity of passwords to generate: "))
     
-    # Get the user's "Downloads" folder path
-    downloads_folder = os.path.expanduser("~/Downloads")
-    filename = os.path.join(downloads_folder, "passwords.txt")
+    # Get the user's desired storage directory path
+    storage_directory = input("Enter the directory to save the password file: ")
+    filename = os.path.join(storage_directory, "passwords.txt")
     
     # Create and start the display update thread
     display_thread = threading.Thread(target=update_display)
