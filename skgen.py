@@ -8,18 +8,13 @@ import time
 total_generated = 0
 current_count = 0
 
-def generate_password(length, difficulty):
-    if difficulty == "easy":
-        characters = string.ascii_lowercase
-    elif difficulty == "medium":
-        characters = string.ascii_letters + string.digits
-    elif difficulty == "hard":
-        characters = string.ascii_letters + string.digits + string.punctuation
-    else:
-        raise ValueError("Invalid difficulty level")
-    
-    password = ''.join(random.choice(characters) for _ in range(length))
-    return password
+def generate_password(length, characters, keyword=None):
+    if keyword:
+        remaining_length = length - len(keyword)
+        if remaining_length <= 0:
+            raise ValueError("Keyword length exceeds password length")
+        return keyword + ''.join(random.choice(characters) for _ in range(remaining_length))
+    return ''.join(random.choice(characters) for _ in range(length))
 
 def write_passwords_to_file(filename, passwords):
     with open(filename, 'w') as file:
@@ -59,6 +54,17 @@ if __name__ == "__main__":
     max_length = int(input("Enter the maximum password length: "))
     difficulty = input("Enter the password difficulty (easy/medium/hard): ")
     
+    if difficulty == "easy":
+        characters = string.ascii_lowercase
+    elif difficulty == "medium":
+        characters = string.ascii_letters + string.digits
+    elif difficulty == "hard":
+        characters = string.ascii_letters + string.digits + string.punctuation
+    else:
+        raise ValueError("Invalid difficulty level")
+    
+    keyword = input("Enter a keyword to include in the passwords (leave empty for no keyword): ")
+    
     num_passwords = int(input("Enter the quantity of passwords to generate: "))
     
     # Get the user's desired storage directory path
@@ -75,7 +81,7 @@ if __name__ == "__main__":
     passwords = []
     for _ in range(num_passwords):
         password_length = random.randint(min_length, max_length)
-        passwords.append(generate_password(password_length, difficulty))
+        passwords.append(generate_password(password_length, characters, keyword))
         total_generated += 1
         current_count += 1
     
